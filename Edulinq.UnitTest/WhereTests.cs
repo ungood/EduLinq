@@ -5,39 +5,51 @@ using NUnit.Framework;
 
 namespace Edulinq.UnitTests
 {
-    using System.Linq;
-
     [TestFixture]
     public class WhereTests
     {
         [Test]
         public void NullSourceThrowsNullArgumentException()
         {
+            IEnumerable<int> source = null;
+            Assert.Throws<ArgumentNullException>(() => source.Where(x => x % 2 == 0));
         }
 
         [Test]
         public void NullPredicateThrowsNullArgumentException()
         {
+            var source = new[] {1, 2, 3, 4, 5};
+            Func<int, bool> predicate = null;
+            Assert.Throws<ArgumentNullException>(() => source.Where(predicate));
         }
 
         [Test]
         public void SimpleFiltering()
         {
+            var source = new[] {1, 2, 3, 4, 5};
+            var result = source.Where(x => x % 2 == 0);
+            CollectionAssert.AreEqual(new [] {2,4}, result);
         }
 
         [Test]
         public void SimpleFilteringWithQueryExpression()
         {
+            var source = new[] {1, 2, 3, 4, 5};
+            var result = (from p in source where p % 2 == 0 select p);
+            CollectionAssert.AreEqual(new [] {2,4}, result);
         }
 
         [Test]
         public void EmptySource()
         {
+            IEnumerable<int> source = new List<int>();
+            CollectionAssert.IsEmpty(source.Where(x => true));
         }
 
         [Test]
         public void ExecutionIsDeferred()
         {
+            ThrowingEnumerable.AssertDeferred(src => src.Where(x => true));
         }
 
         [Test]
