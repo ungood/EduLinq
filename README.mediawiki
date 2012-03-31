@@ -1,10 +1,13 @@
 [http://edulinq.googlecode.com/hg/posts/index.html Jon Skeet's Blog Posts]
 
-* Day 1
+The links below go to a tag of the code _prior_ to implementing that days tests, so you can follow
+along.
+
+* [https://github.com/ungood/EduLinq/tree/PreDay1 Day 1]
 ** Part 1 - Introduction
 ** Part 2 - Where
 
-* Day 2 (Planned) 
+* [https://github.com/ungood/EduLinq/tree/PreDay1 Day 2] (Planned) 
 ** Part 3 - Select
 ** Part 9 - SelectMany
 ** Part 4 - Range
