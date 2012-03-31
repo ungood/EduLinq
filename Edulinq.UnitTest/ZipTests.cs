@@ -6,7 +6,7 @@ namespace Edulinq.UnitTests
     using System.Linq;
 
     [TestFixture]
-    public class ZipTest
+    public class ZipTests
     {
         [Test]
         public void NullFirst()

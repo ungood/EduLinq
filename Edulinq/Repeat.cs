@@ -8,6 +8,8 @@ namespace Edulinq
     {
         public static IEnumerable<TResult> Repeat<TResult>(TResult element, int count)
         {
+            if (count < 0) { throw new ArgumentOutOfRangeException("count"); } 
+
             throw new NotImplementedException();
         }
     }

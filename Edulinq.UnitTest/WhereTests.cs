@@ -8,6 +8,8 @@ namespace Edulinq.UnitTests
     [TestFixture]
     public class WhereTests
     {
+        #region Argument Checking
+
         [Test]
         public void NullSourceThrowsNullArgumentException()
         {
@@ -24,35 +26,6 @@ namespace Edulinq.UnitTests
         }
 
         [Test]
-        public void SimpleFiltering()
-        {
-            var source = new[] {1, 2, 3, 4, 5};
-            var result = source.Where(x => x % 2 == 0);
-            CollectionAssert.AreEqual(new [] {2,4}, result);
-        }
-
-        [Test]
-        public void SimpleFilteringWithQueryExpression()
-        {
-            var source = new[] {1, 2, 3, 4, 5};
-            var result = (from p in source where p % 2 == 0 select p);
-            CollectionAssert.AreEqual(new [] {2,4}, result);
-        }
-
-        [Test]
-        public void EmptySource()
-        {
-            IEnumerable<int> source = new List<int>();
-            CollectionAssert.IsEmpty(source.Where(x => true));
-        }
-
-        [Test]
-        public void ExecutionIsDeferred()
-        {
-            ThrowingEnumerable.AssertDeferred(src => src.Where(x => true));
-        }
-
-        [Test]
         public void WithIndexNullSourceThrowsNullArgumentException()
         {
             IEnumerable<int> source = null;
@@ -66,6 +39,40 @@ namespace Edulinq.UnitTests
             Func<int, int, bool> predicate = null;
             Assert.Throws<ArgumentNullException>(() => source.Where(predicate));
         }
+
+        #endregion
+
+        [Test]
+        public void SimpleFiltering()
+        {
+            var source = new[] {1, 2, 3, 4, 5};
+            var result = source.Where(x => x % 2 == 0);
+            result.AssertSequenceEqual(2, 4);
+        }
+
+        [Test]
+        public void SimpleFilteringWithQueryExpression()
+        {
+            var source = new[] {1, 2, 3, 4, 5};
+            var result = (from p in source where p % 2 == 0 select p);
+            result.AssertSequenceEqual(2, 4);
+        }
+
+        [Test]
+        public void EmptySource()
+        {
+            IEnumerable<int> source = new List<int>();
+            var result = source.Where(x => true);
+            result.AssertSequenceEqual();
+        }
+
+        [Test]
+        public void ExecutionIsDeferred()
+        {
+            ThrowingEnumerable.AssertDeferred(src => src.Where(x => true));
+        }
+
+        #region With Index
 
         [Test]
         public void WithIndexSimpleFiltering()
@@ -88,5 +95,7 @@ namespace Edulinq.UnitTests
         {
             ThrowingEnumerable.AssertDeferred(src => src.Where((x, index) => x > 0));
         }
+
+        #endregion
     }
 }

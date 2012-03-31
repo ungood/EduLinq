@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbsoluteValueComparer.cs" />
+    <Compile Include="Helpers\AbsoluteValueComparer.cs" />
     <Compile Include="AggregateTests.cs" />
     <Compile Include="AllTests.cs" />
     <Compile Include="AnyTests.cs" />
@@ -56,7 +56,7 @@
     <Compile Include="ContainsTests.cs" />
     <Compile Include="CountTests.cs" />
     <Compile Include="DefaultIfEmptyTests.cs" />
-    <Compile Include="DeferredExectution.cs" />
+    <Compile Include="Helpers\DeferredExectution.cs" />
     <Compile Include="DistinctTests.cs" />
     <Compile Include="ElementAtOrDefaultTests.cs" />
     <Compile Include="ElementAtTests.cs" />
@@ -64,10 +64,10 @@
     <Compile Include="ExceptTests.cs" />
     <Compile Include="FirstOrDefaultTests.cs" />
     <Compile Include="FirstTests.cs" />
-    <Compile Include="GenericOnlyCollection.cs" />
+    <Compile Include="Helpers\GenericOnlyCollection.cs" />
     <Compile Include="GroupByTests.cs" />
     <Compile Include="GroupJoinTests.cs" />
-    <Compile Include="Int32Extensions.cs" />
+    <Compile Include="Helpers\Int32Extensions.cs" />
     <Compile Include="IntersectTests.cs" />
     <Compile Include="JoinTests.cs" />
     <Compile Include="LastOrDefaultTests.cs" />
@@ -75,7 +75,7 @@
     <Compile Include="LongCountTests.cs" />
     <Compile Include="MaxTests.cs" />
     <Compile Include="MinTests.cs" />
-    <Compile Include="NonEnumerableList.cs" />
+    <Compile Include="Helpers\NonEnumerableList.cs" />
     <Compile Include="OfTypeTests.cs" />
     <Compile Include="OrderByDescendingTests.cs" />
     <Compile Include="OrderByTests.cs" />
@@ -85,20 +85,20 @@
     <Compile Include="ReverseTests.cs" />
     <Compile Include="SelectManyTests.cs" />
     <Compile Include="SelectTests.cs" />
-    <Compile Include="SemiGenericCollection.cs" />
+    <Compile Include="Helpers\SemiGenericCollection.cs" />
     <Compile Include="SequenceEqualTests.cs" />
     <Compile Include="SingleOrDefaultTests.cs" />
     <Compile Include="SingleTests.cs" />
     <Compile Include="SkipTests.cs" />
     <Compile Include="SkipWhileTests.cs" />
-    <Compile Include="StringEx.cs" />
+    <Compile Include="Helpers\StringEx.cs" />
     <Compile Include="SumTests.cs" />
     <Compile Include="TakeTests.cs" />
     <Compile Include="TakeWhileTests.cs" />
-    <Compile Include="TestExtensions.cs" />
+    <Compile Include="Helpers\TestExtensions.cs" />
     <Compile Include="ThenByDescendingTests.cs" />
     <Compile Include="ThenByTests.cs" />
-    <Compile Include="ThrowingEnumerable.cs" />
+    <Compile Include="Helpers\ThrowingEnumerable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ToArrayTests.cs" />
     <Compile Include="ToDictionaryTests.cs" />
@@ -106,7 +106,7 @@
     <Compile Include="ToLookupTests.cs" />
     <Compile Include="UnionTests.cs" />
     <Compile Include="WhereTests.cs" />
-    <Compile Include="ZipTest.cs" />
+    <Compile Include="ZipTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -5,11 +5,11 @@ using NUnit.Framework;
 
 namespace Edulinq.UnitTests
 {
-    using System.Linq;
-
     [TestFixture]
     public class SelectTests
     {
+        #region Argument Checking
+
         [Test]
         public void NullSourceThrowsNullArgumentException()
         {
@@ -40,37 +40,30 @@ namespace Edulinq.UnitTests
             Assert.Throws<ArgumentNullException>(() => source.Select(projection));
         }
 
+        #endregion
+
         [Test]
         public void SimpleProjection()
         {
-            int[] source = { 1, 5, 2 };
-            var result = source.Select(x => x * 2);
-            result.AssertSequenceEqual(2, 10, 4);
+            Assert.Fail();
         }
 
         [Test]
         public void SimpleProjectionWithQueryExpression()
         {
-            int[] source = { 1, 5, 2 };
-            var result = from x in source
-                         select x * 2;
-            result.AssertSequenceEqual(2, 10, 4);
+            Assert.Fail();
         }
 
         [Test]
         public void SimpleProjectionToDifferentType()
         {
-            int[] source = { 1, 5, 2 };
-            var result = source.Select(x => x.ToInvariantString());
-            result.AssertSequenceEqual("1", "5", "2");
+            Assert.Fail();
         }
 
         [Test]
         public void EmptySource()
         {
-            int[] source = new int[0];
-            var result = source.Select(x => x * 2);
-            result.AssertSequenceEqual();
+            Assert.Fail();
         }
 
         [Test]
@@ -78,6 +71,20 @@ namespace Edulinq.UnitTests
         {
             ThrowingEnumerable.AssertDeferred(src => src.Select(x => x * 2));
         }
+
+        [Test]
+        public void SideEffectsInProjection()
+        {
+            int[] source = new int[3]; // Actual values won't be relevant
+            int count = 0;
+            var query = source.Select(x => count++);
+            query.AssertSequenceEqual(0, 1, 2);
+            query.AssertSequenceEqual(3, 4, 5);
+            count = 10;
+            query.AssertSequenceEqual(10, 11, 12);
+        }
+
+        #region With Index
 
         [Test]
         public void WithIndexSimpleProjection()
@@ -101,16 +108,6 @@ namespace Edulinq.UnitTests
             ThrowingEnumerable.AssertDeferred(src => src.Select((x, index) => x + index));
         }
 
-        [Test]
-        public void SideEffectsInProjection()
-        {
-            int[] source = new int[3]; // Actual values won't be relevant
-            int count = 0;
-            var query = source.Select(x => count++);
-            query.AssertSequenceEqual(0, 1, 2);
-            query.AssertSequenceEqual(3, 4, 5);
-            count = 10;
-            query.AssertSequenceEqual(10, 11, 12);
-        }
+        #endregion
     }
 }

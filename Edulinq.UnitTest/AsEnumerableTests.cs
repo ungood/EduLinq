@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using NUnit.Framework;
 
 namespace Edulinq.UnitTests
@@ -32,10 +34,13 @@ namespace Edulinq.UnitTests
         [Test]
         public void AnonymousType()
         {
-            var list = new[] { 
-                new { FirstName = "Jon", Surname = "Skeet" },
-                new { FirstName = "Holly", Surname = "Skeet" }
-            }.ToList();
+            var array = new[] {
+                new {FirstName = "Jon", Surname = "Skeet"},
+                new {FirstName = "Holly", Surname = "Skeet"}
+            };
+
+            // Can't create a List<T> because T is anonymous
+            var list = array.ToList();
 
             // We can't cast to IEnumerable<T> as we can't express T.
             var sequence = list.AsEnumerable();

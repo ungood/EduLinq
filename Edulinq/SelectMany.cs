@@ -11,14 +11,9 @@ namespace Edulinq
             this IEnumerable<TSource> source,
             Func<TSource, IEnumerable<TResult>> selector)
         {
-            if (source == null)
-            {
-                throw new ArgumentNullException("source");
-            }
-            if (selector == null)
-            {
-                throw new ArgumentNullException("selector");
-            }
+            if (source == null) { throw new ArgumentNullException("source"); }
+            if (selector == null) { throw new ArgumentNullException("selector"); }
+            
             throw new NotImplementedException();
         }
 
@@ -26,14 +21,9 @@ namespace Edulinq
             this IEnumerable<TSource> source,
             Func<TSource, int, IEnumerable<TResult>> selector)
         {
-            if (source == null)
-            {
-                throw new ArgumentNullException("source");
-            }
-            if (selector == null)
-            {
-                throw new ArgumentNullException("selector");
-            }
+            if (source == null) { throw new ArgumentNullException("source"); }
+            if (selector == null) { throw new ArgumentNullException("selector"); }
+
             throw new NotImplementedException();
         }
 
@@ -42,18 +32,10 @@ namespace Edulinq
             Func<TSource, IEnumerable<TCollection>> collectionSelector,
             Func<TSource, TCollection, TResult> resultSelector)
         {
-            if (source == null)
-            {
-                throw new ArgumentNullException("source");
-            }
-            if (collectionSelector == null)
-            {
-                throw new ArgumentNullException("collectionSelector");
-            }
-            if (resultSelector == null)
-            {
-                throw new ArgumentNullException("resultSelector");
-            }
+            if (source == null) { throw new ArgumentNullException("source"); }
+            if (collectionSelector == null) { throw new ArgumentNullException("collectionSelector"); }
+            if (resultSelector == null) { throw new ArgumentNullException("resultSelector"); }
+
             throw new NotImplementedException();
         }
 
@@ -62,18 +44,10 @@ namespace Edulinq
             Func<TSource, int, IEnumerable<TCollection>> collectionSelector,
             Func<TSource, TCollection, TResult> resultSelector)
         {
-            if (source == null)
-            {
-                throw new ArgumentNullException("source");
-            }
-            if (collectionSelector == null)
-            {
-                throw new ArgumentNullException("collectionSelector");
-            }
-            if (resultSelector == null)
-            {
-                throw new ArgumentNullException("resultSelector");
-            }
+            if (source == null) { throw new ArgumentNullException("source"); }
+            if (collectionSelector == null) { throw new ArgumentNullException("collectionSelector"); }
+            if (resultSelector == null) { throw new ArgumentNullException("resultSelector"); }
+
             throw new NotImplementedException();
         }
     }

@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using NUnit.Framework;
 
 namespace Edulinq.UnitTests
 {
-    using System.Linq;
-
     [TestFixture]
     public class RangeTests
     {
@@ -62,6 +61,13 @@ namespace Edulinq.UnitTests
         public void EmptyRangeStartingAtMinInt32()
         {
             Enumerable.Range(int.MinValue, 0).AssertSequenceEqual();
+        }
+
+        [Test]
+        public void RangeIsDeferred()
+        {
+            Enumerable.Range(0, int.MaxValue);
+            Assert.Pass(); // Assume it's alright if it doesn't throw an OutOfMemoryException
         }
     }
 }

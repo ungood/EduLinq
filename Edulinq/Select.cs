@@ -10,14 +10,8 @@ namespace Edulinq
             this IEnumerable<TSource> source,
             Func<TSource, TResult> selector)
         {
-            if (source == null)
-            {
-                throw new ArgumentNullException("source");
-            }
-            if (selector == null)
-            {
-                throw new ArgumentNullException("selector");
-            }
+            if (source == null) { throw new ArgumentNullException("source"); }
+            if (selector == null) { throw new ArgumentNullException("selector"); }
 
             throw new NotImplementedException();
         }
@@ -26,14 +20,8 @@ namespace Edulinq
             this IEnumerable<TSource> source,
             Func<TSource, int, TResult> selector)
         {
-            if (source == null)
-            {
-                throw new ArgumentNullException("source");
-            }
-            if (selector == null)
-            {
-                throw new ArgumentNullException("selector");
-            }
+            if (source == null) { throw new ArgumentNullException("source"); }
+            if (selector == null) { throw new ArgumentNullException("selector"); }
 
             throw new NotImplementedException();
         }

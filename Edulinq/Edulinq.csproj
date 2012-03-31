@@ -45,7 +45,10 @@
     <Compile Include="Aggregate.cs" />
     <Compile Include="All.cs" />
     <Compile Include="Any.cs" />
+    <Compile Include="AsEnumerable.cs" />
     <Compile Include="Concat.cs" />
+    <Compile Include="Contains.cs" />
+    <Compile Include="Count.cs" />
     <Compile Include="Empty.cs" />
     <Compile Include="Except.cs" />
     <Compile Include="FirstOrDefault.cs" />
@@ -54,6 +57,7 @@
     <Compile Include="Select.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectMany.cs" />
+    <Compile Include="ToList.cs" />
     <Compile Include="Where.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
