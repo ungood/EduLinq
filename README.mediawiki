@@ -1,10 +1,10 @@
-*[Jon Skeet's Blog Posts|http://edulinq.googlecode.com/hg/posts/index.html]*
+[http://edulinq.googlecode.com/hg/posts/index.html Jon Skeet's Blog Posts]
 
-* 3/28
+* Day 1
 ** Part 1 - Introduction
 ** Part 2 - Where
 
-* 4/4 (Planned) 
+* Day 2 (Planned) 
 ** Part 3 - Select
 ** Part 9 - SelectMany
 ** Part 4 - Range
