@@ -1,4 +1,4 @@
-[Jon Skeet's Blog Posts|http://edulinq.googlecode.com/hg/posts/index.html]
+[Jon Skeet's Blog Posts](http://edulinq.googlecode.com/hg/posts/index.html)
 
 The links below go to a tag of the code _prior_ to implementing that days tests, so you can follow
 along.
