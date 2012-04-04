@@ -28,5 +28,17 @@ namespace Edulinq.UnitTests
             Assert.AreNotSame(Enumerable.Empty<long>(), Enumerable.Empty<int>());
             Assert.AreNotSame(Enumerable.Empty<string>(), Enumerable.Empty<object>());
         }
+
+        [Test]
+        public void EmptyIsImmutable()
+        {
+            var first = (int[])Enumerable.Empty<int>();
+            Array.Resize(ref first, 20);
+            
+            var second = Enumerable.Empty<int>();
+
+            // This is true because Array.Resize ALWAYS copies.
+            second.AssertSequenceEqual();
+        }
     }
 }

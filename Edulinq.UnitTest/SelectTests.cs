@@ -45,25 +45,33 @@ namespace Edulinq.UnitTests
         [Test]
         public void SimpleProjection()
         {
-            Assert.Fail();
+            var source = new[] {1, 2, 3, 4, 5};
+            var result = source.Select(x => x * 2);
+            result.AssertSequenceEqual(2, 4, 6, 8, 10);
         }
 
         [Test]
         public void SimpleProjectionWithQueryExpression()
         {
-            Assert.Fail();
+            var source = new[] {1, 2, 3, 4, 5};
+            var result = from p in source select p * 2;
+            result.AssertSequenceEqual(2, 4, 6, 8, 10);
         }
 
         [Test]
         public void SimpleProjectionToDifferentType()
         {
-            Assert.Fail();
+            var source = new[] {1, 2, 3, 4, 5};
+            var result = source.Select(x => x.ToString());
+            result.AssertSequenceEqual("1", "2", "3", "4", "5");
         }
 
         [Test]
         public void EmptySource()
         {
-            Assert.Fail();
+            var source = new int[0];
+            var result = source.Select(x => x);
+            result.AssertSequenceEqual();
         }
 
         [Test]

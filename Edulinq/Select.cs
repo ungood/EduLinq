@@ -12,8 +12,17 @@ namespace Edulinq
         {
             if (source == null) { throw new ArgumentNullException("source"); }
             if (selector == null) { throw new ArgumentNullException("selector"); }
+            return SelectImpl(source, selector);
+        }
 
-            throw new NotImplementedException();
+        private static IEnumerable<TResult> SelectImpl<TSource, TResult>(
+            this IEnumerable<TSource> source,
+            Func<TSource, TResult> selector)
+        {
+            foreach(var item in source)
+            {
+                yield return selector(item);
+            }
         }
 
         public static IEnumerable<TResult> Select<TSource, TResult>(
@@ -22,8 +31,19 @@ namespace Edulinq
         {
             if (source == null) { throw new ArgumentNullException("source"); }
             if (selector == null) { throw new ArgumentNullException("selector"); }
+            return SelectImpl(source, selector);
+        }
 
-            throw new NotImplementedException();
+        private static IEnumerable<TResult> SelectImpl<TSource, TResult>(
+            this IEnumerable<TSource> source,
+            Func<TSource, int, TResult> selector)
+        {
+            var index = 0;
+            foreach(var item in source)
+            {
+                yield return selector(item, index);
+                index++;
+            }
         }
     }
 }

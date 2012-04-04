@@ -1,7 +1,9 @@
-﻿using NUnit.Framework;
-
+﻿using System.Collections.Generic;
+using NUnit.Framework;
+using System.Linq;
 namespace Edulinq.UnitTests
 {
+    //using System.Linq;
     [TestFixture]
     public class SelectManyTests
     {
@@ -10,15 +12,19 @@ namespace Edulinq.UnitTests
         [Test]
         public void SimpleFlatten()
         {
-            Assert.Fail();
+            List<string> Test = new List<string>();
+            Test.Add("Howdy");
+            Test.Add("Pal");
+            var result = Test.SelectMany(x => x.ToCharArray());
+            result.AssertSequenceEqual('H', 'o', 'w', 'd', 'y', 'P', 'a', 'l' );
         }
-
-        
 
         [Test]
         public void FlattenWithProjection()
         {
-            Assert.Fail();
+            var source = new[] {"A,B,C", "Hello,World"};
+            var result = source.SelectMany(x => x.Split(','), (original, split) => split.ToUpper());
+            result.AssertSequenceEqual("A", "B", "C", "HELLO", "WORLD");
         }
 
         [Test]
