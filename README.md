@@ -3,15 +3,15 @@
 The links below go to a tag of the code _prior_ to implementing that days tests, so you can follow
 along.
 
-* [Day 1|https://github.com/ungood/EduLinq/tree/PreDay1]
+* [Day 1](https://github.com/ungood/EduLinq/tree/PreDay1)
 	* Part 1 - Introduction
 	* Part 2 - Where
 
-* [Day 2|https://github.com/ungood/EduLinq/tree/PreDay2]
+* [Day 2](https://github.com/ungood/EduLinq/tree/PreDay2)
 	* Part 3 - Select
 	* Part 9 - SelectMany
 	
-* [Day 3|https://github.com/ungood/EduLinq/tree/PreDay3] (Planned)
+* [Day 3](https://github.com/ungood/EduLinq/tree/PreDay3) (Planned)
 	* Part 4 - Range
 	* Part 5 - Empty
 	* Part 6 - Repeat
