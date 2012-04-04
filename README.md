@@ -1,50 +1,57 @@
-[Jon Skeet's Blog Posts](http://edulinq.googlecode.com/hg/posts/index.html)
-
 The links below go to a tag of the code _prior_ to implementing that days tests, so you can follow
 along.
 
 * [Day 1](https://github.com/ungood/EduLinq/tree/PreDay1)
-	* Part 1 - Introduction
-	* Part 2 - Where
+	* [Introduction](http://edulinq.googlecode.com/hg/posts/01-Intro.html)
+	* [Where](http://edulinq.googlecode.com/hg/posts/02-Where.html)
 
 * [Day 2](https://github.com/ungood/EduLinq/tree/PreDay2)
-	* Part 3 - Select
-	* Part 9 - SelectMany
-	
-* [Day 3](https://github.com/ungood/EduLinq/tree/PreDay3) (Planned)
-	* Part 4 - Range
-	* Part 5 - Empty
-	* Part 6 - Repeat
+	* [Select](http://edulinq.googlecode.com/hg/posts/03-Select.html)
+	* [SelectMany](http://edulinq.googlecode.com/hg/posts/09-SelectMany.html)
+* [Day 3](https://github.com/ungood/EduLinq/tree/PreDay3) (Planned) 
+	* [Range](http://edulinq.googlecode.com/hg/posts/04-Range.html)
+	* [Empty](http://edulinq.googlecode.com/hg/posts/05-Empty.html)
+	* [Repeat](http://edulinq.googlecode.com/hg/posts/06-Repeat.html)
 * TODO
-	* Part 7 - Count and LongCount
-	* Part 8 - Concat
-	* Part 10 - Any and All
-	* Part 11 - First/Single/Last and the ...OrDefault versions
-	* Part 12 - DefaultIfEmpty
-	* Part 13 - Aggregate
-	* Part 14 - Distinct
-	* Part 15 - Union
-	* Part 16 - Intersect (and build fiddling)
-	* Part 17 - Except
-	* Part 18 - ToLookup
-	* Part 19 - Join
-	* Part 20 - ToList
-	* Part 21 - GroupBy
-	* Part 22 - GroupJoin
-	* Part 23 - Take/Skip/TakeWhile/SkipWhile
-	* Part 24 - ToArray
-	* Part 25 - ToDictionary
-	* Part 26a - IOrderedEnumerable
-	* Part 26b - OrderBy{,Descending}/ThenBy{,Descending}
-	* Part 26c - Optimizing OrderedEnumerable
-	* Part 26d - Fixing the key selectors, and yielding early
-	* Part 27 - Reverse
-	* Part 28 - Sum
-	* Part 29 - Min/Max
-	* Part 30 - Average
-	* Part 31 - ElementAt / ElementAtOrDefault
-	* Part 32 - Contains
-	* Part 33 - Cast and OfType
-	* Part 34 - SequenceEqual
-	* Part 35 - Zip
-	* Part 36 - AsEnumerable
+	* [Count and LongCount](http://edulinq.googlecode.com/hg/posts/07-Count-And-LongCount.html)
+	* [Concat](http://edulinq.googlecode.com/hg/posts/08-Concat.html)
+
+	* [Any and All](http://edulinq.googlecode.com/hg/posts/10-AnyAndAll.html)
+	* [First/Single/Last and the ...OrDefault versions](http://edulinq.googlecode.com/hg/posts/11-FirstSingleLast.html)
+	* [DefaultIfEmpty](http://edulinq.googlecode.com/hg/posts/12-DefaultIfEmpty.html)
+	* [Aggregate](http://edulinq.googlecode.com/hg/posts/13-Aggregate.html)
+	* [Distinct](http://edulinq.googlecode.com/hg/posts/14-Distinct.html)
+	* [Union](http://edulinq.googlecode.com/hg/posts/15-Union.html)
+	* [Intersect (and build fiddling)](http://edulinq.googlecode.com/hg/posts/16-Intersect.html)
+	* [Except](http://edulinq.googlecode.com/hg/posts/17-Except.html)
+	* [ToLookup](http://edulinq.googlecode.com/hg/posts/18-ToLookup.html)
+	* [Join](http://edulinq.googlecode.com/hg/posts/19-Join.html)
+	* [ToList](http://edulinq.googlecode.com/hg/posts/20-ToList.html)
+	* [GroupBy](http://edulinq.googlecode.com/hg/posts/21-GroupBy.html)
+	* [GroupJoin](http://edulinq.googlecode.com/hg/posts/22-GroupJoin.html)
+	* [Take/Skip/TakeWhile/SkipWhile](http://edulinq.googlecode.com/hg/posts/23-TakeAndSkip.html)
+	* [ToArray](http://edulinq.googlecode.com/hg/posts/24-ToArray.html)
+	* [ToDictionary](http://edulinq.googlecode.com/hg/posts/25-ToDictionary.html)
+	* [IOrderedEnumerable](http://edulinq.googlecode.com/hg/posts/26a-IOrderedEnumerable.html)
+	* [OrderBy{,Descending}/ThenBy{,Descending}](http://edulinq.googlecode.com/hg/posts/26b-OrderByAndThenBy.html)
+	* [Optimizing OrderedEnumerable](http://edulinq.googlecode.com/hg/posts/26c-OptimizingOrderedEnumerable.html)
+	* [Fixing the key selectors, and yielding early](http://edulinq.googlecode.com/hg/posts/26d-YieldingEarly.html)
+	* [Reverse](http://edulinq.googlecode.com/hg/posts/27-Reverse.html)
+	* [Sum](http://edulinq.googlecode.com/hg/posts/28-Sum.html)
+	* [Min/Max](http://edulinq.googlecode.com/hg/posts/29-MinAndMax.html)
+	* [Average](http://edulinq.googlecode.com/hg/posts/30-Average.html)
+	* [ElementAt / ElementAtOrDefault](http://edulinq.googlecode.com/hg/posts/31-ElementAt.html)
+	* [Contains](http://edulinq.googlecode.com/hg/posts/32-Contains.html)
+	* [Cast and OfType](http://edulinq.googlecode.com/hg/posts/33-CastAndOfType.html)
+	* [SequenceEqual](http://edulinq.googlecode.com/hg/posts/34-SequenceEqual.html)
+	* [Zip](http://edulinq.googlecode.com/hg/posts/35-Zip.html)
+	* [AsEnumerable](http://edulinq.googlecode.com/hg/posts/36-AsEnumerable.html)
+	* [Guiding principles](http://edulinq.googlecode.com/hg/posts/37-GuidingPrinciples.html)
+	* [What's missing?](http://edulinq.googlecode.com/hg/posts/38-WhatsMissing.html)
+	* [Comparing implementations](http://edulinq.googlecode.com/hg/posts/39-ComparingImplementations.html)
+	* [Optimization](http://edulinq.googlecode.com/hg/posts/40-Optimization.html)
+	* [How query expressions work](http://edulinq.googlecode.com/hg/posts/41-QueryExpressions.html)
+	* [More optimization](http://edulinq.googlecode.com/hg/posts/42-MoreOptimization.html)
+	* [Out-of-process queries with IQueryable](http://edulinq.googlecode.com/hg/posts/43-IQueryable.html)
+	* [Aspects of Design](http://edulinq.googlecode.com/hg/posts/44-DesignAspects.html)
+	* [Conclusion and List of Posts](http://edulinq.googlecode.com/hg/posts/45-Conclusion.html)
