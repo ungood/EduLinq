@@ -22,13 +22,15 @@ namespace Edulinq
             if(objectCollection != null)
                 return objectCollection.Count;
 
-            int i = 0;
-
-            foreach(var item in source)
+            checked
             {
-                i++;
+                int i = 0;
+                foreach(var item in source)
+                {
+                    i++;
+                }
+                return i;
             }
-            return i;
         }
 
         public static int Count<TSource>(
@@ -40,17 +42,19 @@ namespace Edulinq
             if(predicate == null)
                 throw new ArgumentNullException("predicate");
 
-            int i = 0;
-
-            foreach(var item in source)
+            checked
             {
-                if (predicate(item))
+                int i = 0;
+                foreach(var item in source)
                 {
-                    i++;
+                    if(predicate(item))
+                    {
+                        i++;
+                    }
                 }
+                return i;
             }
-            return i;
-         }
+        }
 
         public static long LongCount<TSource>(
             this IEnumerable<TSource> source)
