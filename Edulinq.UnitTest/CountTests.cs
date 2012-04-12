@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Edulinq.UnitTests.Helpers;
 using NUnit.Framework;
 
 namespace Edulinq.UnitTests
 {
-    using System.Linq;
+    //using System.Linq;
 
     [TestFixture]
     public class CountTests
@@ -59,6 +60,13 @@ namespace Edulinq.UnitTests
         {
             // Counts even numbers within 2, 3, 4, 5, 6
             Assert.AreEqual(3, Enumerable.Range(2, 5).Count(x => x % 2 == 0));
+        }
+
+        [Test]
+        public void CountIsFasterForCollections()
+        {
+            var source = new ThrowingCollection<int>(int.MaxValue);
+            Assert.DoesNotThrow(() => source.Count());
         }
 
         [Test]

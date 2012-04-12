@@ -31,5 +31,12 @@ namespace Edulinq.UnitTests
         {
             Assert.Throws<ArgumentOutOfRangeException>(() => Enumerable.Repeat("foo", -1));
         }
+
+        [Test]
+        public void RepeatIsDeferred()
+        {
+            Enumerable.Repeat(0, int.MaxValue);
+            Assert.Pass(); // Assume it's alright if it doesn't throw an OutOfMemoryException
+        }
     }
 }

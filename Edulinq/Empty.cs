@@ -1,15 +1,21 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Edulinq
 {
     public static partial class Enumerable
     {
+        //static private readonly Dictionary<Type, Object> cache = new Dictionary<Type, object>();  
+
         public static IEnumerable<TResult> Empty<TResult>()
         {
-            throw new NotImplementedException();
+            return EmptyCache<TResult>.Instance;
+        }
+
+        private class EmptyCache<TResult>
+        {
+            public static readonly IEnumerable<TResult> Instance = new TResult[0];
         }
     }
 }

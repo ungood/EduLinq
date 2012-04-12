@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using NUnit.Framework;
@@ -32,13 +33,14 @@ namespace Edulinq.UnitTests
         [Test]
         public void EmptyIsImmutable()
         {
-            var first = (int[])Enumerable.Empty<int>();
-            Array.Resize(ref first, 20);
-            
-            var second = Enumerable.Empty<int>();
+            var empty = Enumerable.Empty<int>();
 
-            // This is true because Array.Resize ALWAYS copies.
-            second.AssertSequenceEqual();
+            var collection = empty as ICollection<int>;
+            if(collection == null)
+                Assert.Pass(); // If it's not a collection, it's not a problem.
+
+            // Adding elements to our empty enumerable would be... strange.
+            Assert.Throws<NotSupportedException>(() => collection.Add(3));
         }
     }
 }

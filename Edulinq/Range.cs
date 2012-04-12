@@ -16,7 +16,13 @@ namespace Edulinq
                 throw new ArgumentOutOfRangeException("count");
             }
 
-            throw new NotImplementedException();
+            return RangeImpl(start, count);
+        }
+
+        private static IEnumerable<int> RangeImpl(int start, int count)
+        {
+            for(int i = 0; i < count; i++)
+                yield return start + i;
         }
     }
 }
