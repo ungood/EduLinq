@@ -4,21 +4,20 @@ along.
 * [Day 1](https://github.com/ungood/EduLinq/tree/PreDay1)
 	* [Introduction](http://edulinq.googlecode.com/hg/posts/01-Intro.html)
 	* [Where](http://edulinq.googlecode.com/hg/posts/02-Where.html)
-
 * [Day 2](https://github.com/ungood/EduLinq/tree/PreDay2)
 	* [Select](http://edulinq.googlecode.com/hg/posts/03-Select.html)
 	* [SelectMany](http://edulinq.googlecode.com/hg/posts/09-SelectMany.html)
-* [Day 3](https://github.com/ungood/EduLinq/tree/PreDay3) (Planned) 
+* [Day 3](https://github.com/ungood/EduLinq/tree/PreDay3)
 	* [Range](http://edulinq.googlecode.com/hg/posts/04-Range.html)
 	* [Empty](http://edulinq.googlecode.com/hg/posts/05-Empty.html)
 	* [Repeat](http://edulinq.googlecode.com/hg/posts/06-Repeat.html)
-* TODO
 	* [Count and LongCount](http://edulinq.googlecode.com/hg/posts/07-Count-And-LongCount.html)
-	* [Concat](http://edulinq.googlecode.com/hg/posts/08-Concat.html)
-
+* [Day 4](https://github.com/ungood/EduLinq/tree/PreDay4) (Planned)
 	* [Any and All](http://edulinq.googlecode.com/hg/posts/10-AnyAndAll.html)
 	* [First/Single/Last and the ...OrDefault versions](http://edulinq.googlecode.com/hg/posts/11-FirstSingleLast.html)
 	* [DefaultIfEmpty](http://edulinq.googlecode.com/hg/posts/12-DefaultIfEmpty.html)
+* TODO
+	* [Concat](http://edulinq.googlecode.com/hg/posts/08-Concat.html)
 	* [Aggregate](http://edulinq.googlecode.com/hg/posts/13-Aggregate.html)
 	* [Distinct](http://edulinq.googlecode.com/hg/posts/14-Distinct.html)
 	* [Union](http://edulinq.googlecode.com/hg/posts/15-Union.html)

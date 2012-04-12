@@ -48,9 +48,13 @@
     <Compile Include="AsEnumerable.cs" />
     <Compile Include="Concat.cs" />
     <Compile Include="Contains.cs" />
+    <Compile Include="DefaultIfEmpty.cs" />
+    <Compile Include="LastOrDefault.cs" />
+    <Compile Include="Last.cs" />
     <Compile Include="Count.cs" />
     <Compile Include="Empty.cs" />
     <Compile Include="Except.cs" />
+    <Compile Include="First.cs" />
     <Compile Include="FirstOrDefault.cs" />
     <Compile Include="Range.cs" />
     <Compile Include="Repeat.cs" />
@@ -59,6 +63,11 @@
     <Compile Include="SelectMany.cs" />
     <Compile Include="ToList.cs" />
     <Compile Include="Where.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Link>README.md</Link>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

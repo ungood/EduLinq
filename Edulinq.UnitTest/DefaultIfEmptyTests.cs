@@ -1,11 +1,8 @@
 ﻿using System;
 using NUnit.Framework;
-using System.Linq;
 
 namespace Edulinq.UnitTests
 {
-    using System.Linq;
-
     [TestFixture]
     public class DefaultIfEmptyTests
     {

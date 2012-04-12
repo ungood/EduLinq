@@ -10,13 +10,10 @@ namespace Edulinq
             Func<TSource, bool> predicate)
         {
             if (source == null)
-            {
                 throw new ArgumentNullException("source");
-            }
             if (predicate == null)
-            {
                 throw new ArgumentNullException("predicate");
-            }
+
             throw new NotImplementedException();
         }
     }

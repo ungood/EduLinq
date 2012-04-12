@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Edulinq
 {
     public static partial class Enumerable
     {
-        public static bool Any<TSource>(
+        public static TSource First<TSource>(
             this IEnumerable<TSource> source)
         {
             if (source == null)
@@ -15,7 +16,7 @@ namespace Edulinq
             throw new NotImplementedException();
         }
 
-        public static bool Any<TSource>(
+        public static TSource First<TSource>(
             this IEnumerable<TSource> source,
             Func<TSource, bool> predicate)
         {
