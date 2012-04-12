@@ -13,7 +13,7 @@ namespace Edulinq
             return EmptyCache<TResult>.Instance;
         }
 
-        private class EmptyCache<TResult>
+        private static class EmptyCache<TResult>
         {
             public static readonly IEnumerable<TResult> Instance = new TResult[0];
         }
