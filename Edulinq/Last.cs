@@ -13,7 +13,20 @@ namespace Edulinq
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            throw new NotImplementedException();
+            TSource lastItem = default(TSource);
+            bool found = false;    
+            foreach(var item in source)
+            {
+                lastItem = item;
+                found = true;
+            }
+
+            if (!found)
+            {
+                throw new InvalidOperationException("asdf");
+            }
+
+            return lastItem;
         }
 
         public static TSource Last<TSource>(

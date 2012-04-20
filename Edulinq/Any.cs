@@ -11,8 +11,11 @@ namespace Edulinq
         {
             if (source == null)
                 throw new ArgumentNullException("source");
-
-            throw new NotImplementedException();
+            foreach(var item in source)
+            {
+                return true;
+            }
+            return false;
         }
 
         public static bool Any<TSource>(
@@ -24,7 +27,14 @@ namespace Edulinq
             if (predicate == null)
                 throw new ArgumentNullException("predicate");
 
-            throw new NotImplementedException();
+            foreach(var item in source)
+            {
+                if (predicate(item))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

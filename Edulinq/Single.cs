@@ -12,7 +12,17 @@ namespace Edulinq
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            throw new NotImplementedException();
+            var enumerator = source.GetEnumerator();
+            if(!enumerator.MoveNext())
+            {
+                throw new InvalidOperationException("No elements in sequence");                
+            }
+            var firstItem = enumerator.Current;
+            if(enumerator.MoveNext())
+            {
+                throw new InvalidOperationException("More than one element in sequence");                
+            }
+            return firstItem;
         }
 
         public static TSource Single<TSource>(
@@ -24,7 +34,30 @@ namespace Edulinq
             if (predicate == null)
                 throw new ArgumentNullException("predicate");
 
-            throw new NotImplementedException();
+            var enumerator = source.GetEnumerator();
+            bool found = false;
+            while(enumerator.MoveNext())
+            {
+                if(predicate(enumerator.Current))
+                {
+                    found = true;
+                    break;
+                }
+            }
+
+            var firstItem = enumerator.Current;
+            
+            while(enumerator.MoveNext())
+            {
+                if(predicate(enumerator.Current))
+                    throw new InvalidOperationException("More than one matching element in sequence");                
+            }
+            
+            if(!found)
+            {
+                throw new InvalidOperationException("No items found in sequence.");
+            }
+            return firstItem;
         }
 
     }

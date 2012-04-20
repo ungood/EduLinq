@@ -14,7 +14,14 @@ namespace Edulinq
             if (predicate == null)
                 throw new ArgumentNullException("predicate");
 
-            throw new NotImplementedException();
+            foreach(var item in source)
+            {
+                if (!predicate(item))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

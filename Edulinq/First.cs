@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Edulinq
 {
@@ -13,7 +11,12 @@ namespace Edulinq
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            throw new NotImplementedException();
+            foreach(var item in source)
+            {
+                return item;
+            }
+
+            throw new InvalidOperationException("Sequence contains no elements.");
         }
 
         public static TSource First<TSource>(
@@ -25,7 +28,13 @@ namespace Edulinq
             if (predicate == null)
                 throw new ArgumentNullException("predicate");
 
-            throw new NotImplementedException();
+            foreach(var item in source)
+            {
+                if(predicate(item))
+                    return item;
+            }
+
+            throw new InvalidOperationException("Sequence contains no elements.");
         }
     }
 }

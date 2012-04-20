@@ -11,8 +11,12 @@ namespace Edulinq
         {
             if (source == null)
                 throw new ArgumentNullException("source");
+             foreach(var item in source)
+            {
+                return item;
+            }
 
-            throw new NotImplementedException();
+            return default(TSource);
         }
 
         public static TSource FirstOrDefault<TSource>(
@@ -24,7 +28,12 @@ namespace Edulinq
             if (predicate == null)
                 throw new ArgumentNullException("predicate");
 
-            throw new NotImplementedException();
+            foreach(var item in source)
+            {
+                if(predicate(item))
+                    return item;
+            }
+            return default(TSource);
         }
 
     }
