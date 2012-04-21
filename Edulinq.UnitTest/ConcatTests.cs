@@ -11,9 +11,7 @@ namespace Edulinq.UnitTests
         [Test]
         public void SimpleConcatenation()
         {
-            IEnumerable<string> first = new string[] { "a", "b" };
-            IEnumerable<string> second = new string[] { "c", "d" };
-            first.Concat(second).AssertSequenceEqual("a", "b", "c", "d");
+            Assert.Fail("Write a failing test!");
         }
 
         [Test]

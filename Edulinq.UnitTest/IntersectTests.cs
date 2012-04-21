@@ -7,6 +7,12 @@ namespace Edulinq.UnitTests
     public class IntersectTests
     {
         [Test]
+        public void SimpleIntersect()
+        {
+            Assert.Fail("Write a failing test!");
+        }
+
+        [Test]
         public void NullFirstWithoutComparer()
         {
             string[] first = null;

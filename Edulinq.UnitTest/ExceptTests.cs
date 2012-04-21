@@ -7,6 +7,12 @@ namespace Edulinq.UnitTests
     public class ExceptTests
     {
         [Test]
+        public void SimpleExcept()
+        {
+            Assert.Fail("Write a failing test!");
+        }
+
+        [Test]
         public void NullFirstWithoutComparer()
         {
             string[] first = null;

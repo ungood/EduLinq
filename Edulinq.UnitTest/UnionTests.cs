@@ -8,6 +8,12 @@ namespace Edulinq.UnitTests
     public class UnionTests
     {
         [Test]
+        public void SimpleUnion()
+        {
+            Assert.Fail("Write a failing test!");
+        }
+
+        [Test]
         public void NullFirstWithoutComparer()
         {
             string[] first = null;

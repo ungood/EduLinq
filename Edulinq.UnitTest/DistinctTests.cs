@@ -14,6 +14,12 @@ namespace Edulinq.UnitTests
         private static readonly string TestString2 = new string(TestString1.ToCharArray());
 
         [Test]
+        public void SimpleDistinct()
+        {
+            Assert.Fail("Write a failing test!");
+        }
+
+        [Test]
         public void NullSourceNoComparer()
         {
             string[] source = null;
