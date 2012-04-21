@@ -48,6 +48,9 @@
     <Compile Include="AsEnumerable.cs" />
     <Compile Include="Concat.cs" />
     <Compile Include="Contains.cs" />
+    <Compile Include="Intersect.cs" />
+    <Compile Include="Union.cs" />
+    <Compile Include="Distinct.cs" />
     <Compile Include="Single.cs" />
     <Compile Include="SingleOrDefault.cs" />
     <Compile Include="DefaultIfEmpty.cs" />

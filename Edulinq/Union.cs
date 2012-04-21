@@ -7,7 +7,7 @@ namespace Edulinq
 {
     public static partial class Enumerable
     {
-        public static IEnumerable<TSource> Except<TSource>( 
+        public static IEnumerable<TSource> Union<TSource>( 
             this IEnumerable<TSource> first, 
             IEnumerable<TSource> second,
             IEqualityComparer<TSource> comparer = null)

@@ -45,6 +45,11 @@ namespace Edulinq
                 }
             }
 
+            if(!found)
+            {
+                throw new InvalidOperationException("No items found in sequence.");
+            }
+
             var firstItem = enumerator.Current;
             
             while(enumerator.MoveNext())
@@ -53,10 +58,6 @@ namespace Edulinq
                     throw new InvalidOperationException("More than one matching element in sequence");                
             }
             
-            if(!found)
-            {
-                throw new InvalidOperationException("No items found in sequence.");
-            }
             return firstItem;
         }
 

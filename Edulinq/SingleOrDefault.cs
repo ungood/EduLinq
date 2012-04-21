@@ -12,7 +12,18 @@ namespace Edulinq
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            throw new NotImplementedException();
+            var enumerator = source.GetEnumerator();
+            if(!enumerator.MoveNext())
+            {
+                return default(TSource);
+            }
+
+            var firstItem = enumerator.Current;
+            if(enumerator.MoveNext())
+            {
+                throw new InvalidOperationException("More than one element found.");
+            }
+            return firstItem;
         }
 
         public static TSource SingleOrDefault<TSource>(
@@ -24,8 +35,34 @@ namespace Edulinq
             if (predicate == null)
                 throw new ArgumentNullException("predicate");
 
-            throw new NotImplementedException();
-        }
 
+            //return source.Where(predicate).SingleOrDefault();
+            var enumerator = source.GetEnumerator();
+            bool found = false;
+            while(enumerator.MoveNext())
+            {
+                if(predicate(enumerator.Current))
+                {
+                    found = true;
+                    break;
+                }
+            }
+
+            if(!found)
+            {
+                return default(TSource);
+            }
+
+            var firstItem = enumerator.Current;
+            
+            while(enumerator.MoveNext())
+            {
+                if(predicate(enumerator.Current))
+                    throw new InvalidOperationException("More than one element found.");
+            }
+            
+            
+            return firstItem;
+        }
     }
 }

@@ -28,6 +28,7 @@ namespace Edulinq
             if (predicate == null)
                 throw new ArgumentNullException("predicate");
 
+
             foreach(var item in source)
             {
                 if(predicate(item))

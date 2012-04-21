@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Edulinq
 {
@@ -23,7 +21,10 @@ namespace Edulinq
                 throw new ArgumentNullException("source");
             }
 
-            throw new NotImplementedException();
+            using(var enumerator = source.GetEnumerator())
+            {
+                return enumerator.MoveNext() ? source : new[] {defaultValue};
+            }
         }
 
     }

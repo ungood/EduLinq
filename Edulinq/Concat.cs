@@ -12,13 +12,9 @@ namespace Edulinq
             IEnumerable<TSource> second)
         {
             if (first == null)
-            {
                 throw new ArgumentNullException("first");
-            }
             if (second == null)
-            {
                 throw new ArgumentNullException("second");
-            }
 
             throw new NotImplementedException();
         }

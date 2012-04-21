@@ -13,7 +13,21 @@ namespace Edulinq
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            throw new NotImplementedException();
+            var list = source as IList<TSource>;
+            if(list != null)
+            {
+                return list.Count == 0 ? default(TSource) : list[list.Count - 1];
+            }
+
+            TSource lastItem = default(TSource);
+            bool found = false;    
+            foreach(var item in source)
+            {
+                lastItem = item;
+                found = true;
+            }
+
+            return found ? lastItem : default(TSource);
         }
 
         public static TSource LastOrDefault<TSource>(
@@ -25,7 +39,18 @@ namespace Edulinq
             if (predicate == null)
                 throw new ArgumentNullException("predicate");
 
-            throw new NotImplementedException();
+            TSource lastItem = default(TSource);
+            bool found = false;    
+            foreach(var item in source)
+            {
+                if(predicate(item))
+                {
+                    lastItem = item;
+                    found = true;
+                }
+            }
+
+            return found ? lastItem : default(TSource);
         }
     }
 }
