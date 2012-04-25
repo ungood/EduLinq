@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Edulinq
 {
@@ -9,16 +7,29 @@ namespace Edulinq
     {
         public static IEnumerable<TSource> Distinct<TSource>( 
             this IEnumerable<TSource> source, 
-            IEqualityComparer<TSource> comparer)
+            IEqualityComparer<TSource> comparer = null)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
-            if (comparer == null)
-                throw new ArgumentNullException("comparer");
 
             comparer = comparer ?? EqualityComparer<TSource>.Default;
 
-            throw new NotImplementedException();
+            return DistinctImpl(source, comparer);
         }
+
+         private static IEnumerable<TSource> DistinctImpl<TSource>( 
+            this IEnumerable<TSource> source, 
+            IEqualityComparer<TSource> comparer = null)
+         {
+             var hashSet = new HashSet<TSource>(comparer);
+
+             foreach(var item in source)
+             {
+                 if (hashSet.Add(item))
+                 {
+                     yield return item;
+                 }
+             }
+         }
     }
 }

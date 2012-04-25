@@ -16,7 +16,20 @@ namespace Edulinq
             if (second == null)
                 throw new ArgumentNullException("second");
 
-            throw new NotImplementedException();
+            return ConcatImp(first, second);
+        }
+        private static IEnumerable<TSource> ConcatImp<TSource>(
+            this IEnumerable<TSource> first,
+            IEnumerable<TSource> second)
+        {
+            foreach(var source in first)
+            {
+                yield return source;
+            }
+            foreach(var source in second)
+            {
+                yield return source;
+            }
         }
     }
 }

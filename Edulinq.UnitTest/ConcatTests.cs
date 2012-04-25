@@ -11,7 +11,11 @@ namespace Edulinq.UnitTests
         [Test]
         public void SimpleConcatenation()
         {
-            Assert.Fail("Write a failing test!");
+            var first = new[] {1, 2, 3};
+            var second = new[] {3, 4, 5};
+
+            var result = first.Concat(second);
+            result.AssertSequenceEqual(1, 2, 3, 3, 4, 5);
         }
 
         [Test]

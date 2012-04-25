@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+//using System.Linq;
 using System.Runtime.CompilerServices;
 using NUnit.Framework;
 
@@ -12,11 +12,14 @@ namespace Edulinq.UnitTests
         // TestString1 and TestString2 are references to different but equal strings
         private static readonly string TestString1 = "test";
         private static readonly string TestString2 = new string(TestString1.ToCharArray());
+        
 
         [Test]
         public void SimpleDistinct()
         {
-            Assert.Fail("Write a failing test!");
+            List<int> test = new List<int> {1, 1, 1, 2, 3, 4, 5, 5};
+            var query = test.Distinct();
+            query.AssertSequenceEqual(1, 2, 3, 4, 5);
         }
 
         [Test]
