@@ -10,6 +10,12 @@ namespace Edulinq.UnitTests
     public class ToLookupTests
     {
         [Test]
+        public void SimpleToLookup()
+        {
+            Assert.Fail("Write a failing test!");
+        }
+
+        [Test]
         public void SourceSequenceIsReadEagerly()
         {
             var source = new ThrowingEnumerable();
