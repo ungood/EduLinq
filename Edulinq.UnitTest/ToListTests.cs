@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using NUnit.Framework;
 
 namespace Edulinq.UnitTests
 {
-    using System.Linq;
-
     [TestFixture]
     public class ToListTests
     {

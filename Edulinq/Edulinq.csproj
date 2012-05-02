@@ -46,11 +46,13 @@
     <Compile Include="All.cs" />
     <Compile Include="Any.cs" />
     <Compile Include="AsEnumerable.cs" />
-    <Compile Include="Collections\Grouping.cs" />
-    <Compile Include="Collections\Lookup.cs" />
+    <Compile Include="Grouping.cs" />
+    <Compile Include="Lookup.cs" />
     <Compile Include="Concat.cs" />
     <Compile Include="Contains.cs" />
     <Compile Include="Intersect.cs" />
+    <Compile Include="ToArray.cs" />
+    <Compile Include="ToDictionary.cs" />
     <Compile Include="ToLookup.cs" />
     <Compile Include="Union.cs" />
     <Compile Include="Distinct.cs" />

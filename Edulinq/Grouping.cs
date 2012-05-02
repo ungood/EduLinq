@@ -1,20 +1,24 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 
-namespace Edulinq.Collections
+namespace Edulinq
 {
     internal sealed class Grouping<TKey, TElement> : IGrouping<TKey, TElement>, ICollection<TElement>
     {
         private readonly TKey key;
-        private readonly TElement[] elements;
+        private readonly IList<TElement> elements;
 
-        internal Grouping(TKey key, IEnumerable<TElement> elements)
+        internal Grouping(TKey key)
         {
             this.key = key;
-            this.elements = elements.ToArray();
+            elements = new List<TElement>();
+        }
+
+        internal void AddInternal(TElement element)
+        {
+            elements.Add(element);
         }
 
         #region Implementation of IGrouping<TKey, TElement>
@@ -55,7 +59,7 @@ namespace Edulinq.Collections
 
         public void CopyTo(TElement[] array, int arrayIndex)
         {
-            Array.Copy(elements, 0, array, arrayIndex, elements.Length);
+            elements.CopyTo(array, arrayIndex);
         }
 
         public bool Remove(TElement item)
@@ -65,7 +69,7 @@ namespace Edulinq.Collections
 
         public int Count
         {
-            get { return elements.Length; }
+            get { return elements.Count; }
         }
 
         public bool IsReadOnly

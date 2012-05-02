@@ -10,6 +10,12 @@ namespace Edulinq.UnitTests
     public class ToDictionaryTests
     {
         [Test]
+        public void SimpleToDictionary()
+        {
+            Assert.Fail("Write failing test!");
+        }
+
+        [Test]
         public void NullSourceNoComparerNoElementSelector()
         {
             string[] source = null;

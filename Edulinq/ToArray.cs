@@ -5,16 +5,13 @@ namespace Edulinq
 {
     public static partial class Enumerable
     {
-        public static List<TSource> ToList<TSource>(
+        public static TSource[] ToArray<TSource>(
             this IEnumerable<TSource> source)
         {
             if(source == null)
                 throw new ArgumentNullException("source");
 
             throw new NotImplementedException();
-        }
-
-        // What's the point, why use ToList() instead of new List()?
-        // anonymous types, that's why.
+        } 
     }
 }
