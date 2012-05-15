@@ -9,6 +9,12 @@ namespace Edulinq.UnitTests
     public class JoinTests
     {
         [Test]
+        public void SimpleJoin()
+        {
+            Assert.Fail("Write failing test");
+        }
+
+        [Test]
         public void ExecutionIsDeferred()
         {
             var outer = new ThrowingEnumerable();
@@ -49,23 +55,6 @@ namespace Edulinq.UnitTests
                 // before we start reading the outer sequence
                 Assert.Throws<DivideByZeroException>(() => iterator.MoveNext());
             }
-        }
-
-        [Test]
-        public void SimpleJoin()
-        {
-            // We're going to join on the first character in the outer sequence item
-            // being equal to the second character in the inner sequence item
-            string[] outer = { "first", "second", "third" };
-            string[] inner = { "essence", "offer", "eating", "psalm" };
-
-            var query = outer.Join(inner,
-                                   outerElement => outerElement[0],
-                                   innerElement => innerElement[1],
-                                   (outerElement, innerElement) => outerElement + ":" + innerElement);
-
-            // Note: no matches for "third"
-            query.AssertSequenceEqual("first:offer", "second:essence", "second:psalm");
         }
 
         [Test]

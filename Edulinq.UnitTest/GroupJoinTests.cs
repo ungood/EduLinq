@@ -9,6 +9,12 @@ namespace Edulinq.UnitTests
     public class GroupJoinTests
     {
         [Test]
+        public void SimpleGroupJoin()
+        {
+            Assert.Fail("Write failing test.");
+        }
+
+        [Test]
         public void ExecutionIsDeferred()
         {
             var outer = new ThrowingEnumerable();
@@ -16,22 +22,7 @@ namespace Edulinq.UnitTests
             outer.GroupJoin(inner, x => x, y => y, (x, y) => x + y.Count());
         }
 
-        [Test]
-        public void SimpleGroupJoin()
-        {
-            // We're going to join on the first character in the outer sequence item
-            // being equal to the second character in the inner sequence item
-            string[] outer = { "first", "second", "third" };
-            string[] inner = { "essence", "offer", "eating", "psalm" };
-
-            var query = outer.GroupJoin(inner,
-                                   outerElement => outerElement[0],
-                                   innerElement => innerElement[1],
-                                   (outerElement, innerElements) => outerElement + ":" + StringEx.Join(";", innerElements));
-
-            query.AssertSequenceEqual("first:offer", "second:essence;psalm", "third:");
-        }
-
+        
         [Test]
         public void CustomComparer()
         {

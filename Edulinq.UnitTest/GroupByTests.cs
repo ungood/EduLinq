@@ -10,6 +10,12 @@ namespace Edulinq.UnitTests
     public class GroupByTests
     {
         [Test]
+        public void SimpleGroupBy()
+        {
+            Assert.Fail("Write failing test.");
+        }
+
+        [Test]
         public void ExecutionIsPartiallyDeferred()
         {
             // No exception yet...
@@ -34,25 +40,6 @@ namespace Edulinq.UnitTests
                     iterator.MoveNext();
                 }
             });
-        }
-
-        [Test]
-        public void SimpleGroupBy()
-        {
-            string[] source = { "abc", "hello", "def", "there", "four" };
-            var groups = source.GroupBy(x => x.Length);
-
-            var list = groups.ToList();
-            Assert.AreEqual(3, list.Count);
-
-            list[0].AssertSequenceEqual("abc", "def");
-            Assert.AreEqual(3, list[0].Key);
-
-            list[1].AssertSequenceEqual("hello", "there");
-            Assert.AreEqual(5, list[1].Key);
-
-            list[2].AssertSequenceEqual("four");
-            Assert.AreEqual(4, list[2].Key);
         }
 
         [Test]

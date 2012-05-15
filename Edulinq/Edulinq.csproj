@@ -46,7 +46,10 @@
     <Compile Include="All.cs" />
     <Compile Include="Any.cs" />
     <Compile Include="AsEnumerable.cs" />
+    <Compile Include="GroupBy.cs" />
     <Compile Include="Grouping.cs" />
+    <Compile Include="GroupJoin.cs" />
+    <Compile Include="Join.cs" />
     <Compile Include="Lookup.cs" />
     <Compile Include="Concat.cs" />
     <Compile Include="Contains.cs" />
