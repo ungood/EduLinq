@@ -17,7 +17,7 @@ namespace Edulinq
             return DistinctImpl(source, comparer);
         }
 
-         private static IEnumerable<TSource> DistinctImpl<TSource>( 
+        private static IEnumerable<TSource> DistinctImpl<TSource>( 
             this IEnumerable<TSource> source, 
             IEqualityComparer<TSource> comparer = null)
          {

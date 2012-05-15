@@ -9,7 +9,11 @@ namespace Edulinq.UnitTests
         [Test]
         public void SimpleIntersect()
         {
-            Assert.Fail("Write a failing test!");
+            var first = new[] {1, 2, 3, 4, 4};
+            var second = new[] {3, 4, 4, 5, 6};
+
+            var intersect = first.Intersect(second);
+            intersect.AssertSequenceEqual(3, 4);
         }
 
         [Test]

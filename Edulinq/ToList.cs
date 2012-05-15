@@ -11,7 +11,7 @@ namespace Edulinq
             if(source == null)
                 throw new ArgumentNullException("source");
 
-            throw new NotImplementedException();
+            return new List<TSource>(source);
         }
 
         // What's the point, why use ToList() instead of new List()?

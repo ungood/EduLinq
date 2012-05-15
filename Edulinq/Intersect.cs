@@ -20,7 +20,27 @@ namespace Edulinq
 
             comparer = comparer ?? EqualityComparer<TSource>.Default;
 
-            throw new NotImplementedException();
+            return IntersectImpl(first, second, comparer);
+
+
         }
+
+         private static IEnumerable<TSource> IntersectImpl<TSource>( 
+            this IEnumerable<TSource> first, 
+            IEnumerable<TSource> second,
+            IEqualityComparer<TSource> comparer = null)
+         {
+             var hashSet = new HashSet<TSource>(second, comparer);
+             foreach(var item in first)
+             {
+
+                 if (hashSet.Contains(item))
+                 {
+                     yield return item;
+                     hashSet.Remove(item);
+                 }
+             }
+         }
     }
+
 }

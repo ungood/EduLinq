@@ -26,7 +26,13 @@ namespace Edulinq
             if(elementSelector == null)
                 throw new ArgumentNullException("elementSelector");
 
-            throw new NotImplementedException();
+            comparer = comparer ?? EqualityComparer<TKey>.Default;
+            var result = new Dictionary<TKey, TElement>(comparer);
+            foreach(var item in source)
+            {
+                result.Add(keySelector(item), elementSelector(item));
+            }
+            return result;
         }
     }
 }

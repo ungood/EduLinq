@@ -12,7 +12,13 @@ namespace Edulinq.UnitTests
         [Test]
         public void SimpleToDictionary()
         {
-            Assert.Fail("Write failing test!");
+            var source = new[] {1, 2, 3};
+            var dict = source.ToDictionary(x => x.ToString(), x => x);
+
+            Assert.AreEqual(3, dict.Count);
+            Assert.AreEqual(1, dict["1"]);
+            Assert.AreEqual(2, dict["2"]);
+            Assert.AreEqual(3, dict["3"]);
         }
 
         [Test]

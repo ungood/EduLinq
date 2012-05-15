@@ -9,7 +9,9 @@ namespace Edulinq.UnitTests
         [Test]
         public void SimpleExcept()
         {
-            Assert.Fail("Write a failing test!");
+            string[] first = new string[]{ "11", "2",  "3", "4",  "3", "4"};
+            string[] second = new string[]{ "1", "2",  "3", "4",  "5", "6"};
+            first.Except(second).AssertSequenceEqual("11");
         }
 
         [Test]

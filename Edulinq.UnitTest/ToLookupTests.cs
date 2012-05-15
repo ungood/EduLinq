@@ -10,7 +10,13 @@ namespace Edulinq.UnitTests
         [Test]
         public void SimpleToLookup()
         {
-            Assert.Fail("Write a failing test!");
+            var source = new[] {1, 2, 3, 3, 1};
+            var lookup = source.ToLookup(x => x.ToString(), x => x);
+
+            Assert.AreEqual(3, lookup.Count);
+            lookup["1"].AssertSequenceEqual(1, 1);
+            lookup["2"].AssertSequenceEqual(2);
+            lookup["3"].AssertSequenceEqual(3, 3);
         }
 
         [Test]

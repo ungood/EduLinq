@@ -9,6 +9,17 @@ namespace Edulinq.UnitTests
     public class ToListTests
     {
         [Test]
+        public void AnonymousTypesTest()
+        {
+            var source = new[] {
+                new {Id = 1, Widget = "Hello"},
+                new {Id = 2, Widget = "Foobar"}
+            };
+
+            var list = source.ToList();
+        }
+
+        [Test]
         public void ResultIsIndependentOfSource()
         {
             List<string> source = new List<string> { "xyz", "abc" };

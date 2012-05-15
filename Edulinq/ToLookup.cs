@@ -30,7 +30,12 @@ namespace Edulinq
 
             comparer = comparer ?? EqualityComparer<TKey>.Default;
 
-            throw new NotImplementedException();
+            var result = new Lookup<TKey, TElement>(comparer);
+            foreach(var item in source)
+            {
+                result.Add(keySelector(item), elementSelector(item));
+            }
+            return result;
         }
     }
 }
