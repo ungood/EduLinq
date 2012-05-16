@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace Edulinq.UnitTests
 {
-    using System.Linq;
+    //using System.Linq;
 
     [TestFixture]
     public class GroupByTests
@@ -12,7 +12,13 @@ namespace Edulinq.UnitTests
         [Test]
         public void SimpleGroupBy()
         {
-            Assert.Fail("Write failing test.");
+            var source = new[] { "one", "two", "three", "four" };
+            var result = source.GroupBy(x => x.Count());
+
+            Assert.AreEqual(3, result.Count());
+            result.First(g=>g.Key == 3).AssertSequenceEqual("one","two");
+            result.First(g => g.Key == 4).AssertSequenceEqual("four");
+            result.First(g => g.Key == 5).AssertSequenceEqual("three");
         }
 
         [Test]

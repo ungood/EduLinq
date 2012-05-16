@@ -45,7 +45,20 @@ namespace Edulinq
                 throw new ArgumentNullException("elementSelector");
 
             comparer = comparer ?? EqualityComparer<TKey>.Default;
-            throw new NotImplementedException();
+            return GroupByImpl(source, keySelector, elementSelector, comparer);
+        }
+
+        private static IEnumerable<IGrouping<TKey, TElement>> GroupByImpl<TSource, TKey, TElement>(
+            this IEnumerable<TSource> source,
+            Func<TSource, TKey> keySelector,
+            Func<TSource, TElement> elementSelector,
+            IEqualityComparer<TKey> comparer)
+        {
+            var lookup = source.ToLookup(keySelector, elementSelector, comparer);
+            foreach(var item in lookup)
+            {
+                yield return item;
+            }
         }
 
         /// <summary>
@@ -61,8 +74,7 @@ namespace Edulinq
             if (resultSelector == null)
                 throw new ArgumentNullException("resultSelector");
 
-            // We can implement this overload using the above, but how?
-            throw new NotImplementedException();
+            return GroupByImpl(source, keySelector, elementSelector, comparer).Select(x => resultSelector(x.Key, x));
         }
 
     }

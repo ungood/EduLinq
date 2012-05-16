@@ -3,15 +3,20 @@ using NUnit.Framework;
 
 namespace Edulinq.UnitTests
 {
-    using System.Linq;
-
     [TestFixture]
     public class JoinTests
     {
         [Test]
         public void SimpleJoin()
         {
-            Assert.Fail("Write failing test");
+            var outer = new[] {"apple", "banana", "orange", "pineapple", "pear"};
+            var inner = new[] {"paul", "adam", "alex"};
+
+            var result = outer.Join(inner,
+                fruit => fruit[0],
+                person => person[0],
+                (fruit, person) => person + ":" + fruit);
+            result.AssertSequenceEqual("adam:apple", "alex:apple", "paul:pineapple", "paul:pear");
         }
 
         [Test]

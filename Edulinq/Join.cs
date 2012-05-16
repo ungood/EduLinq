@@ -32,7 +32,32 @@ namespace Edulinq
             // For each item in outer and each item in inner, if innerKey and outerKey are equal, return a result.
 
             comparer = comparer ?? EqualityComparer<TKey>.Default;
-            throw new NotImplementedException();
+
+            return JoinImpl(outer, inner, outerKeySelector, innerKeySelector, resultSelector, comparer);
+        }
+
+        private static IEnumerable<TResult> JoinImpl<TOuter, TInner, TKey, TResult>(
+            this IEnumerable<TOuter> outer,
+            IEnumerable<TInner> inner,
+            Func<TOuter, TKey> outerKeySelector,
+            Func<TInner, TKey> innerKeySelector,
+            Func<TOuter, TInner, TResult> resultSelector,
+            IEqualityComparer<TKey> comparer)
+        {
+
+            var innerLookup = ToLookup(inner, innerKeySelector, comparer);
+
+            foreach(var outerItem in outer)
+            {
+                var outerKey = outerKeySelector(outerItem);
+                if (outerKey != null)
+                {
+                    foreach (var innerItem in innerLookup[outerKey])
+                    {
+                        yield return resultSelector(outerItem, innerItem);
+                    }
+                }
+            }
         }
     }
 }
