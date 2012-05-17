@@ -78,6 +78,7 @@
     <Compile Include="MinTests.cs" />
     <Compile Include="Helpers\NonEnumerableList.cs" />
     <Compile Include="ModifiedClosureTests.cs" />
+    <Compile Include="NullComparisonTests.cs" />
     <Compile Include="OfTypeTests.cs" />
     <Compile Include="OrderByDescendingTests.cs" />
     <Compile Include="OrderByTests.cs" />
