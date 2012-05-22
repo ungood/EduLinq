@@ -29,6 +29,17 @@ namespace Edulinq
 
             comparer = comparer ?? EqualityComparer<TKey>.Default;
 
+            return GroupJoinImpl(outer, inner, outerKeySelector, innerKeySelector, resultSelector, comparer);
+        }
+
+        private static IEnumerable<TResult> GroupJoinImpl<TOuter, TInner, TKey, TResult>(
+            this IEnumerable<TOuter> outer,
+            IEnumerable<TInner> inner,
+            Func<TOuter, TKey> outerKeySelector,
+            Func<TInner, TKey> innerKeySelector,
+            Func<TOuter, IEnumerable<TInner>, TResult> resultSelector,
+            IEqualityComparer<TKey> comparer)
+        {
             throw new NotImplementedException();
         }
     }

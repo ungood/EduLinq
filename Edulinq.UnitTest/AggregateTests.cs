@@ -10,6 +10,12 @@ namespace Edulinq.UnitTests
     public class AggregateTests
     {
         [Test]
+        public void SimpleTest()
+        {
+            Assert.Fail("Write failing test");
+        }
+
+        [Test]
         public void NullSourceUnseeded()
         {
             int[] source = null;
