@@ -8,6 +8,12 @@ namespace Edulinq.UnitTests
     public class TakeWhileTests
     {
         [Test]
+        public void SimpleTest()
+        {
+            Assert.Fail("Write a failing test.");
+        }
+
+        [Test]
         public void ExecutionIsDeferred()
         {
             new ThrowingEnumerable().TakeWhile(x => x > 10);

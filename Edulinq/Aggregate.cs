@@ -62,15 +62,6 @@ namespace Edulinq
                     accumulator = func(accumulator, enumerator.Current);
                 return accumulator;
             }
-
-            //var current = source.First();
-
-            //foreach(var item in source)
-            //{
-            //    current = func(current, item);
-            //}
-
-            //return current;
         }
     }
 }

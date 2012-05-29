@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using NUnit.Framework;
 
 namespace Edulinq.UnitTests
@@ -9,6 +7,7 @@ namespace Edulinq.UnitTests
     [TestFixture]
     public class PageTests
     {
+        [Test]
         public void SimpleTest()
         {
             var source = new[] {1, 2, 3, 4, 5, 6};

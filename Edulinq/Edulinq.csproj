@@ -46,6 +46,9 @@
     <Compile Include="All.cs" />
     <Compile Include="Any.cs" />
     <Compile Include="AsEnumerable.cs" />
+    <Compile Include="Comparers.cs" />
+    <Compile Include="OrderBy.cs" />
+    <Compile Include="OrderedEnumerable.cs" />
     <Compile Include="Page.cs" />
     <Compile Include="Take.cs" />
     <Compile Include="GroupBy.cs" />

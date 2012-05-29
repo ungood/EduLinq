@@ -10,6 +10,12 @@ namespace Edulinq.UnitTests
     public class ThenByTests
     {
         [Test]
+        public void SimpleTest()
+        {
+            Assert.Fail("Write a failing test.");
+        }
+
+        [Test]
         public void ExecutionIsDeferred()
         {
             new ThrowingEnumerable().OrderBy(x => x).ThenBy(x => x);

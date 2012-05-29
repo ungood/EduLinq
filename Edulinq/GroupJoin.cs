@@ -44,14 +44,9 @@ namespace Edulinq
 
             foreach (var outerItem in outer)
             {
-                
                 var outerKey = outerKeySelector(outerItem);
-                //if(outerKey != null)
-                //{
-
-                 yield return resultSelector(outerItem, innerLookup[outerKey].Where(innerItem => innerItem != null));
-                    
-                //}
+                var innerNoNulls = innerLookup[outerKey].Where(innerItem => innerKeySelector(innerItem) != null);
+                yield return resultSelector(outerItem, innerNoNulls);
             }
         }
     }

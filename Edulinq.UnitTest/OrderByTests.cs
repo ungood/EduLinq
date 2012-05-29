@@ -4,11 +4,15 @@ using System.Collections.Generic;
 
 namespace Edulinq.UnitTests
 {
-    using System.Linq;
-
     [TestFixture]
     public class OrderByTests
     {
+        [Test]
+        public void SimpleTest()
+        {
+            Assert.Fail("Write a failing test.");
+        }
+
         [Test]
         public void ExecutionIsDeferred()
         {

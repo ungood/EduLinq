@@ -8,6 +8,12 @@ namespace Edulinq.UnitTests
     public class SkipWhileTests
     {
         [Test]
+        public void SimpleTest()
+        {
+            Assert.Fail("Write a failing test.");
+        }
+
+        [Test]
         public void ExecutionIsDeferred()
         {
             new ThrowingEnumerable().SkipWhile(x => x > 10);
