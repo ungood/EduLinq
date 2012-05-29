@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace Edulinq.UnitTests
 {
-    using System.Linq;
+    //using System.Linq;
 
     [TestFixture]
     public class AggregateTests
@@ -12,7 +12,8 @@ namespace Edulinq.UnitTests
         [Test]
         public void SimpleTest()
         {
-            Assert.Fail("Write failing test");
+            int[] source = { 1, 4, 5 };
+            Assert.AreEqual(10, source.Aggregate((current, value) => current + value));
         }
 
         [Test]

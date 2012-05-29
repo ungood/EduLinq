@@ -12,7 +12,19 @@ namespace Edulinq
             TAccumulate seed,
             Func<TAccumulate, TSource, TAccumulate> func)
         {
-            return source.Aggregate(seed, func, x => x);
+            if (source == null)
+                throw new ArgumentNullException("source");
+            if (func == null)
+                throw new ArgumentNullException("func");
+            
+            var current = seed;
+
+            foreach (var item in source)
+            {
+                current = func(current, item);
+            }
+
+            return current;
         }
 
         public static TResult Aggregate<TSource, TAccumulate, TResult>(
@@ -28,7 +40,7 @@ namespace Edulinq
             if (resultSelector == null)
                 throw new ArgumentNullException("resultSelector");
 
-            throw new NotImplementedException();
+            return resultSelector(Aggregate(source, seed, func));
         }
 
         public static TSource Aggregate<TSource>(
@@ -40,7 +52,25 @@ namespace Edulinq
             if (func == null)
                 throw new ArgumentNullException("func");
 
-            throw new NotImplementedException();
+            using(var enumerator = source.GetEnumerator())
+            {
+                if(!enumerator.MoveNext())
+                    throw new InvalidOperationException("Empty sequence");
+
+                var accumulator = enumerator.Current;
+                while (enumerator.MoveNext())
+                    accumulator = func(accumulator, enumerator.Current);
+                return accumulator;
+            }
+
+            //var current = source.First();
+
+            //foreach(var item in source)
+            //{
+            //    current = func(current, item);
+            //}
+
+            //return current;
         }
     }
 }

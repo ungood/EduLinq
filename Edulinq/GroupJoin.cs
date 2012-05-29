@@ -40,7 +40,19 @@ namespace Edulinq
             Func<TOuter, IEnumerable<TInner>, TResult> resultSelector,
             IEqualityComparer<TKey> comparer)
         {
-            throw new NotImplementedException();
+            var innerLookup = ToLookup(inner, innerKeySelector, comparer);
+
+            foreach (var outerItem in outer)
+            {
+                
+                var outerKey = outerKeySelector(outerItem);
+                //if(outerKey != null)
+                //{
+
+                 yield return resultSelector(outerItem, innerLookup[outerKey].Where(innerItem => innerItem != null));
+                    
+                //}
+            }
         }
     }
 }
