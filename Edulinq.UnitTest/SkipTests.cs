@@ -7,6 +7,14 @@ namespace Edulinq.UnitTests
     public class SkipTests
     {
         [Test]
+        public void SimpleTest()
+        {
+            var source = new[] {1, 2, 3, 4, 5};
+            var result = source.Skip(3);
+            result.AssertSequenceEqual(4, 5);
+        }
+
+        [Test]
         public void ExecutionIsDeferred()
         {
             new ThrowingEnumerable().Skip(10);

@@ -27,7 +27,24 @@ namespace Edulinq
 
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            // This is a truly sucky way of implementing it. It's the simplest I could think of to start with. 
+            // We'll come back to it! 
+            List<T> elements = source.ToList();
+            while (elements.Count > 0)
+            {
+                T minElement = elements[0];
+                int minIndex = 0;
+                for (int i = 1; i < elements.Count; i++)
+                {
+                    if (currentComparer.Compare(elements[i], minElement) < 0)
+                    {
+                        minElement = elements[i];
+                        minIndex = i;
+                    }
+                }
+                elements.RemoveAt(minIndex);
+                yield return minElement;
+            } 
         }
 
         IEnumerator IEnumerable.GetEnumerator()

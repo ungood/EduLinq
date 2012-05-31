@@ -10,7 +10,9 @@ namespace Edulinq.UnitTests
         [Test]
         public void SimpleTest()
         {
-            Assert.Fail("Write a failing test.");
+            var source = new[] {"zebra", "lion", "tiger", "leopard"};
+            var result = source.OrderBy(animal => animal[0]);
+            result.AssertSequenceEqual("lion", "leopard", "tiger", "zebra");
         }
 
         [Test]

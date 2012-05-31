@@ -11,14 +11,16 @@ namespace Edulinq
             this IEnumerable<TSource> source,
             int count)
         {
-            throw new NotImplementedException();
+            return SkipWhile(source, (source1, i) => i < count);
         }
 
         public static IEnumerable<TSource> SkipWhile<TSource>(
             this IEnumerable<TSource> source,
             Func<TSource, bool> predicate)
         {
-            throw new NotImplementedException();
+            if (predicate == null)
+                throw new ArgumentNullException("predicate");
+            return SkipWhile(source, (source1, i) => predicate(source1));
         }
 
         public static IEnumerable<TSource> SkipWhile<TSource>(
@@ -37,7 +39,29 @@ namespace Edulinq
             this IEnumerable<TSource> source,
             Func<TSource, int, bool> predicate)
         {
-            throw new NotImplementedException();
+            int i = 0;
+
+            using(var enumerator = source.GetEnumerator())
+            {
+
+                while(enumerator.MoveNext())
+                {
+                    if(predicate(enumerator.Current, i)==false)
+                    {
+                        yield return enumerator.Current;
+                        break;
+                    }
+                  i++;             
+                }
+                while(enumerator.MoveNext())
+                {
+                    yield return enumerator.Current;
+                }
+                
+            
+            }
+            
+
         }
     }
 }

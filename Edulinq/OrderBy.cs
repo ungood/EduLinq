@@ -19,7 +19,8 @@ namespace Edulinq
 
             comparer = comparer ?? Comparer<TKey>.Default;
 
-            throw new NotImplementedException();
+            var newComparer = new ProjectionComparer<TSource, TKey>(keySelector, comparer);
+            return new OrderedEnumerable<TSource>(source, newComparer);
         }
 
         public static IOrderedEnumerable<TSource> OrderByDescending<TSource, TKey>(

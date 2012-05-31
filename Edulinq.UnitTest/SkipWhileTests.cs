@@ -10,7 +10,9 @@ namespace Edulinq.UnitTests
         [Test]
         public void SimpleTest()
         {
-            Assert.Fail("Write a failing test.");
+            var source = new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+            var result = source.SkipWhile(x => x < 5);
+            result.AssertSequenceEqual(5, 6, 7, 8, 9, 10);
         }
 
         [Test]

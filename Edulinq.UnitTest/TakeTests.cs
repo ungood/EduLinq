@@ -3,9 +3,19 @@ using NUnit.Framework;
 
 namespace Edulinq.UnitTests
 {
+    //using System.Linq;
+
     [TestFixture]
     public class TakeTests
     {
+        [Test]
+        public void SimpleTest()
+        {
+            var source = new[] { 1, 2, 3, 4, 5 };
+            var result = source.Take(3);
+            result.AssertSequenceEqual(1,2,3);
+        }
+
         [Test]
         public void ExecutionIsDeferred()
         {
