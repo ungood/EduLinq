@@ -38,7 +38,7 @@ namespace Edulinq
         }
 
         public static IOrderedEnumerable<TSource> ThenBy<TSource, TKey>(
-            this IEnumerable<TSource> source,
+            this IOrderedEnumerable<TSource> source,
             Func<TSource, TKey> keySelector,
             IComparer<TKey> comparer = null)
         {
@@ -53,7 +53,7 @@ namespace Edulinq
         }
 
         public static IOrderedEnumerable<TSource> ThenByDescending<TSource, TKey>(
-            this IEnumerable<TSource> source,
+            this IOrderedEnumerable<TSource> source,
             Func<TSource, TKey> keySelector,
             IComparer<TKey> comparer = null)
         {
