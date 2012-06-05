@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Edulinq
 {
-    internal class OrderedEnumerable<T> : IOrderedEnumerable<T>
+    public class OrderedEnumerable<T> : IOrderedEnumerable<T>
     {
         private readonly IEnumerable<T> source;
         private readonly IComparer<T> currentComparer;

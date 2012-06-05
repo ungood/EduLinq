@@ -50,6 +50,7 @@
     <Compile Include="OrderBy.cs" />
     <Compile Include="OrderedEnumerable.cs" />
     <Compile Include="Page.cs" />
+    <Compile Include="Reverse.cs" />
     <Compile Include="Take.cs" />
     <Compile Include="GroupBy.cs" />
     <Compile Include="Grouping.cs" />

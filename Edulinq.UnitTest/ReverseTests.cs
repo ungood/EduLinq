@@ -10,6 +10,12 @@ namespace Edulinq.UnitTests
     public class ReverseTests
     {
         [Test]
+        public void SimpleTest()
+        {
+            
+        }
+
+        [Test]
         public void NullSource()
         {
             string[] source = null;
