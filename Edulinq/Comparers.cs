@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Edulinq
 {
-    internal class ProjectionComparer<T, TKey> : IComparer<T>
+    public class ProjectionComparer<T, TKey> : IComparer<T>
     {
         private readonly Func<T, TKey> selector;
         private readonly IComparer<TKey> comparer;
@@ -20,7 +20,7 @@ namespace Edulinq
         }
     }
 
-    internal class ReverseComparer<T> : IComparer<T>
+    public class ReverseComparer<T> : IComparer<T>
     {
         private readonly IComparer<T> forwardComparer;
 
@@ -35,7 +35,7 @@ namespace Edulinq
         }
     }
 
-    internal class CompoundComparer<T> : IComparer<T>
+    public class CompoundComparer<T> : IComparer<T>
     {
         private readonly IComparer<T> firstComparer;
         private readonly IComparer<T> secondComparer;

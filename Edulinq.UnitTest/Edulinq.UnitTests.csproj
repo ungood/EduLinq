@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComparerTests.cs" />
     <Compile Include="Helpers\AbsoluteValueComparer.cs" />
     <Compile Include="AggregateTests.cs" />
     <Compile Include="AllTests.cs" />
