@@ -22,7 +22,18 @@ namespace Edulinq
             IComparer<TKey> comparer,
             bool descending)
         {
-            throw new NotImplementedException();
+            var projectionComparer = new ProjectionComparer<T, TKey>(keySelector, comparer);
+            if (descending)
+            {
+                var reverseComparer = new ReverseComparer<T>(projectionComparer);
+                var compoundComparer = new CompoundComparer<T>(currentComparer, reverseComparer);
+                return new OrderedEnumerable<T>(source, compoundComparer);
+            }
+            else
+            {
+                var compoundComparer = new CompoundComparer<T>(currentComparer, projectionComparer);
+                return new OrderedEnumerable<T>(source, compoundComparer);
+            }
         }
 
         public IEnumerator<T> GetEnumerator()

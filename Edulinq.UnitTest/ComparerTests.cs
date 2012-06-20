@@ -54,8 +54,8 @@ namespace Edulinq.UnitTests
         {
             var comparer = new CompoundComparer<string>(firstLetter, length);
 
-            LessThan(comparer,"apple", "banana");
-            GreaterThan(comparer,"banana", "apple");
+            LessThan(comparer,"appletree", "banana");
+            GreaterThan(comparer,"banana", "appletree");
             LessThan(comparer,"pear", "pineapple");
             GreaterThan(comparer,"pineapple", "pear");
             EqualTo(comparer,"pear", "plum");

@@ -4,11 +4,17 @@ using NUnit.Framework;
 
 namespace Edulinq.UnitTests
 {
-    using System.Linq;
-
     [TestFixture]
     public class OrderByDescendingTests
     {
+        [Test]
+        public void SimpleTest()
+        {
+            var source = new[] { "zebra", "lion", "tiger", "leopard" };
+            var result = source.OrderByDescending(animal => animal[0]);
+            result.AssertSequenceEqual("zebra", "tiger", "lion", "leopard");
+        }
+
         [Test]
         public void ExecutionIsDeferred()
         {

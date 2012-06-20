@@ -1,10 +1,11 @@
 ﻿using System;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Edulinq.UnitTests
 {
-    using System.Linq;
+    //using System.Linq;
 
     [TestFixture]
     public class ThenByTests
@@ -12,7 +13,10 @@ namespace Edulinq.UnitTests
         [Test]
         public void SimpleTest()
         {
-            Assert.Fail("Write a failing test.");
+            var source = new[] { "zebra", "lion", "tigers", "tiger", "leopard" };
+            var orderedEnumerable = source.OrderBy(animal => animal[0]);
+            var result = orderedEnumerable.ThenBy(animal => animal[1]);
+            result.AssertSequenceEqual("leopard", "lion", "tigers", "tiger", "zebra");
         }
 
         [Test]

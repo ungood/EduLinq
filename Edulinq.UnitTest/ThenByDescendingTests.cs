@@ -1,11 +1,10 @@
 ﻿using System;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Edulinq.UnitTests
 {
-    using System.Linq;
-
     [TestFixture]
     public class ThenByDescendingTests
     {

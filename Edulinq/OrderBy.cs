@@ -35,7 +35,9 @@ namespace Edulinq
 
             comparer = comparer ?? Comparer<TKey>.Default;
 
-            throw new NotImplementedException();
+            var projectionComparer = new ProjectionComparer<TSource, TKey>(keySelector, comparer);
+            var reverseComparer = new ReverseComparer<TSource>(projectionComparer);
+            return new OrderedEnumerable<TSource>(source, reverseComparer);
         }
 
         public static IOrderedEnumerable<TSource> ThenBy<TSource, TKey>(
@@ -50,7 +52,7 @@ namespace Edulinq
 
             comparer = comparer ?? Comparer<TKey>.Default;
 
-            throw new NotImplementedException();
+            return source.CreateOrderedEnumerable(keySelector, comparer, false);
         }
 
         public static IOrderedEnumerable<TSource> ThenByDescending<TSource, TKey>(
@@ -65,7 +67,7 @@ namespace Edulinq
 
             comparer = comparer ?? Comparer<TKey>.Default;
 
-            throw new NotImplementedException();
+            return source.CreateOrderedEnumerable(keySelector, comparer, true);
         }
     }
 }
