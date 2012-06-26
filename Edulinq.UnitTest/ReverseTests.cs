@@ -12,7 +12,7 @@ namespace Edulinq.UnitTests
         [Test]
         public void SimpleTest()
         {
-            
+            Assert.Fail("Write something");
         }
 
         [Test]

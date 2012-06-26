@@ -51,6 +51,7 @@
     <Compile Include="OrderedEnumerable.cs" />
     <Compile Include="Page.cs" />
     <Compile Include="Reverse.cs" />
+    <Compile Include="SequenceEqual.cs" />
     <Compile Include="Take.cs" />
     <Compile Include="GroupBy.cs" />
     <Compile Include="Grouping.cs" />

@@ -9,6 +9,12 @@ namespace Edulinq.UnitTests
     [TestFixture]
     public class SequenceEqualTests
     {
+        [Test]
+        public void SimpleTest()
+        {
+            Assert.Fail("Write something");
+        }
+
         // TestString1 and TestString2 are distinct but equal strings
         private static readonly string TestString1 = "test";
         private static readonly string TestString2 = new string(TestString1.ToCharArray());
